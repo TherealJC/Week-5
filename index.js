@@ -69,3 +69,79 @@ mark: for (let i = 0; i < 5; i++){
     }
 }
 console.log(c);
+
+//Breaking a block, As we can see here, because the code breaks first, it will not continue onto "after" 
+//You can use the break keyword to break out of regular 'non for-loop' blocks as long as it’s labeled:
+block: {
+    console.log("before");
+    break block;
+    console.log("after");
+}
+//Generator executes a yield statement in an asynchronous way but it will execute only one next yield 
+//statement every time the function is called:
+function* generator() {
+    yield 5;
+    yield 10;
+    yield 15;
+  }for (let value of generator())
+console.log( value );
+//all the {} and () are hard to understand why they are neccesary
+
+//for..of loops, and strings, i dont get the value part, but it makes it show each string individually
+let string = 'text';for (let value of string)
+  console.log( value );
+
+//Arrays and for.. of loops
+let array = [0, 1, 2];
+for (let value of array)
+   console.log( value );
+//for..of loops work only with iterable values. Objects are not iterable. Arrays are.
+//An iterable is any Python object capable of returning its members one at a time,
+//permitting it to be iterated over in a for-loop. (Even the explanation makes no sense)
+//As a remedy you can first convert an object to an iterable using some of the built-in Object methods: .keys(), .values() or .entries():
+//Example of object keys
+const object1 = {
+    a: 'somestring',
+    b: 42,
+    c: false
+  };
+  console.log(Object.keys(object1));
+//In my opinion, this is turning objects into iterable code so that it can be used in loops
+
+//A while loop will iterate for an indefinite number of times until the specified condition (there is only one) 
+//evaluates to false. At which point your loop will stop and execution flow will resume.
+let g = 0;while (g++ < 5)
+    console.log(g);
+//A secondary condition can be tested within the loop. This makes it possible to break from the loop earlier if needed:
+while (g++) {
+    if (g = 3)
+        break;
+}
+console.log(g);
+//I wrote this example myself, the function stops once qq reach greater than (>) 3, so it stops at 4 as
+//4 is the first number greater than 3
+let qq = 0; while (qq++ <5) {
+    if (qq > 3)
+    break;
+}
+console.log(qq)
+
+//Continue used to skip steps, here it stops once it reaches 1, and skips the step of e++ > 1000
+let e = 0;
+while (e++ < 1000) {
+    if (e > 1)
+        continue;
+    console.log(e);
+}
+//Array methods are attached to Array.prototype property. This means you can execute them directly
+//from array object like array.forEach() or directly from array’s literal value like: [1,2,3].forEach();
+//Array.forEach, Return value: none The forEach method will execute a function for every item in the array.
+//Each iteration step receives 3 arguments value, index, object. It’s similar to a for-loop but cleaner:
+let fruit = ['pear', 'banana', 'orange', 'apple', 'pineapple'];
+let print = function(item, index, object) { console.log(item); }
+fruit.forEach( print );
+console.log(fruit);
+//
+fruit.forEach(function(item, index, object) {
+    console.log(item, index, object);
+});
