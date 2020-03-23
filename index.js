@@ -51,9 +51,21 @@ for (let i = 0;; i++) { console.log("loop"); break; };
 //Website example that doesn't work, i have tried playing around with it, but it doesnt work
 // the 'mark' command errors with "Undefined label 'mark'" and removing mark leaves me with 
 //the error of illegal break statement 'break'
-let c = 0; {
-mark: for (let i = 0; i < 5; i++)
-    inner: for (let j = 0; j < 5; j++)
-        c++; if (i == 2) break mark; }
-console.log(c);
+// let c = 0;
+// mark: for (let i = 0; i < 5; i++)
+// console.log(i);
+//     inner: for (let j = 0; j < 5; j++)
+//     console.log(j);
+//         c++; if (i == 2) break mark;
+//     console.log(c++); 
+// console.log(c);
 
+//Kyran showed me how to do it properly, it would have been A LOT easier if the example actually worked
+//and wasn't missing crucial parts of the code (the curly brackets)
+let c = 0;
+mark: for (let i = 0; i < 5; i++){
+    inner: for (let j = 0; j < 5; j++){
+        c++; if (i == 2) break mark;
+    }
+}
+console.log(c);
