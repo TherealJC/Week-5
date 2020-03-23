@@ -99,6 +99,7 @@ for (let value of array)
 //An iterable is any Python object capable of returning its members one at a time,
 //permitting it to be iterated over in a for-loop. (Even the explanation makes no sense)
 //As a remedy you can first convert an object to an iterable using some of the built-in Object methods: .keys(), .values() or .entries():
+//The Object.keys() method returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
 //Example of object keys
 const object1 = {
     a: 'somestring',
