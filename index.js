@@ -146,3 +146,9 @@ console.log(fruit);
 fruit.forEach(function(item, index, object) {
     console.log(item, index, object);
 });
+//Array.every, Return value: boolean Not to be confused with the “execute for every item” logic of forEach.
+//In many cases method every will actually not run on every item in the array when at least one item doesn’t evaluate to true
+//The method every will return true if the value of every single item in the array satisfies the condition specified in its function argument:
+let numbers = [0,1,2,3,4,5,6,7];
+let result = numbers.every(value => value < 10 );
+result; // true
